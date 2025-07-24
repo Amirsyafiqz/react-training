@@ -1,19 +1,21 @@
+/* ===== IMPORT FONTS ===== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* ===== TAILWIND DIRECTIVES ===== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-@layer base {
-  body {
-    @apply bg-dark-900 text-white font-sans;
-  }
+/* ===== BASE STYLES ===== */
+body {
+  @apply bg-dark-900 text-white font-sans;
 }
 
+/* ===== CUSTOM COMPONENTS ===== */
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded bg-blue-500 text-white;
+    @apply px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition;
   }
 
   .wrapper {
@@ -21,7 +23,9 @@
   }
 }
 
+/* ===== CUSTOM UTILITIES ===== */
 @layer utilities {
+  /* Gradient Text */
   .text-gradient {
     background: linear-gradient(to right, #db5dbd, #5d4ddb);
     -webkit-background-clip: text;
@@ -29,6 +33,7 @@
     color: transparent;
   }
 
+  /* Hide Scrollbar */
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -38,6 +43,7 @@
     display: none;
   }
 
+  /* Bebas Neue Fancy Text */
   .fancy-text {
     font-family: 'Bebas Neue', cursive;
     font-size: 3rem;
@@ -45,6 +51,7 @@
     text-transform: uppercase;
   }
 
+  /* Background Pattern (Subtle Dot Grid) */
   .pattern {
     background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
     background-size: 40px 40px;

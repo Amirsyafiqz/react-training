@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -8,12 +9,14 @@
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
+  will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -28,18 +31,16 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo.spin {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  padding: 2em;
-}
 
 .read-the-docs {
   color: #888;
 }
+
 
 .search {
   padding: 8px;
@@ -47,17 +48,19 @@
   border-radius: 8px;
 }
 
+
 header h1 {
   color: white;
-  font-size: 48px;
+  font-size: 2.5rem; /* 40px */
   font-weight: bold;
 }
 
 @media (min-width: 768px) {
   header h1 {
-    font-size: 72px;
+    font-size: 4.5rem; /* 72px */
   }
 }
+
 
 .movie-grid {
   display: grid;
@@ -65,11 +68,20 @@ header h1 {
   gap: 1rem;
 }
 
+
 .movie-card {
-  background-color: #1f2937;
+  background-color: #1f1f1f; /* Same as Tailwind's bg-dark-800 */
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
 }
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+
 
 

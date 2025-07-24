@@ -12,9 +12,10 @@ const Search = ({ searchTerm, setSearchTerm }) => {
         placeholder="Search through thousands of movies"
         value={searchTerm}
         onChange={handleChange}
-        className="w-full p-4 pl-12 rounded-xl bg-dark-800 text-white placeholder-gray-400 focus:outline-none"
+        className="w-full p-4 pl-12 rounded-xl bg-zinc-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        aria-label="Search movies"
       />
-      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-400">
+      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-400 text-lg">
         🔍
       </span>
     </div>
@@ -22,6 +23,8 @@ const Search = ({ searchTerm, setSearchTerm }) => {
 };
 
 export default Search;
+
+
 
 
       
