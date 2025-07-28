@@ -8,6 +8,7 @@ const MovieCard = ({ movie }) => {
     vote_average,
     original_language,
     release_date,
+    overview,
   } = movie;
 
   const poster = poster_path
@@ -29,6 +30,9 @@ const MovieCard = ({ movie }) => {
       <h3 className="text-white font-semibold text-lg truncate w-full">
         {title || "Untitled"}
       </h3>
+
+       {overview}
+
 
       <div className="flex flex-wrap justify-center items-center gap-2 text-gray-400 text-sm mt-2">
         <div className="flex items-center gap-1">

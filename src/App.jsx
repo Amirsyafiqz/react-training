@@ -53,6 +53,7 @@ const App = () => {
       try {
         const response = await fetch(endpoint, API_OPTIONS);
         const data = await response.json();
+        console.log(data)
 
         if (!data.results || data.results.length === 0) {
           setErrorMessage("No movies found.");
@@ -77,11 +78,11 @@ const App = () => {
   }, [debouncedSearchTerm]);
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-white px-4 pb-10">
+    <main className="bg-red-900 text-white px-4 pb-10">
       <div className="wrapper max-w-7xl mx-auto">
         {/* Hero Section */}
         <header className="text-center py-10">
-          <img src="/hero.png" alt="Hero Banner" className="mx-auto w-20 mb-6" />
+          
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle
           </h1>
@@ -119,7 +120,7 @@ const App = () => {
           ) : (
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {movieList.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
+                <MovieCard movie={movie} />
               ))}
             </ul>
           )}
