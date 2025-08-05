@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useEffect, useState } from "react";
 import Search from "./components/Search.jsx";
 import Spinner from "./components/Spinner.jsx";
@@ -78,13 +77,16 @@ const App = () => {
   }, [debouncedSearchTerm]);
 
   return (
-    <main className="bg-red-900 text-white px-4 pb-10">
+    <main className="bg-[#0f0f1b] text-white min-h-screen px-4 pb-10">
       <div className="wrapper max-w-7xl mx-auto">
         {/* Hero Section */}
         <header className="text-center py-10">
-          
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle
+            Find{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+              Movies
+            </span>{" "}
+            You'll Enjoy Without the Hassle
           </h1>
         </header>
 
@@ -97,11 +99,22 @@ const App = () => {
             <h2 className="text-2xl font-semibold mb-4">🔥 Trending Movies</h2>
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {trendingMovies.map((movie) => (
-                <li key={movie.$id} className="bg-zinc-800 rounded-xl overflow-hidden">
-                  <img src={movie.poster_url} alt={movie.title} className="w-full h-auto" />
+                <li
+                  key={movie.$id}
+                  className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg"
+                >
+                  <img
+                    src={movie.poster_url}
+                    alt={movie.title}
+                    className="w-full h-[300px] object-cover"
+                  />
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold truncate">{movie.title || movie.searchTerm}</h3>
-                    <p className="text-sm text-gray-400">Searched {movie.count}x</p>
+                    <h3 className="text-lg font-semibold truncate">
+                      {movie.title || movie.searchTerm}
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                      Searched {movie.count}x
+                    </p>
                   </div>
                 </li>
               ))}
@@ -120,7 +133,7 @@ const App = () => {
           ) : (
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {movieList.map((movie) => (
-                <MovieCard movie={movie} />
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </ul>
           )}
